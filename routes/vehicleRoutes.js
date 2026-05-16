@@ -3,9 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    getOptimalSchedule
+    getVehicles,
+    addVehicle
 } = require("../controllers/vehicleController");
 
-router.get("/schedule", getOptimalSchedule);
+router.get("/vehicles", getVehicles);
+
+router.post("/vehicles", addVehicle);
 
 module.exports = router;

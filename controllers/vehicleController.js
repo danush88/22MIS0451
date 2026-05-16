@@ -1,9 +1,22 @@
-const getOptimalSchedule = async (req, res) => {
+const vehicles = [];
+
+const getVehicles = (req, res) => {
+
+    res.json(vehicles);
+
+};
+
+const addVehicle = (req, res) => {
 
     try {
 
-        res.json({
-            message: "Vehicle Scheduler API Working"
+        const vehicle = req.body;
+
+        vehicles.push(vehicle);
+
+        res.status(201).json({
+            message: "Vehicle added successfully",
+            data: vehicle
         });
 
     } catch (error) {
@@ -17,5 +30,6 @@ const getOptimalSchedule = async (req, res) => {
 };
 
 module.exports = {
-    getOptimalSchedule
+    getVehicles,
+    addVehicle
 };
