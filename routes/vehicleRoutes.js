@@ -3,12 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    getVehicles,
-    addVehicle
+    addVehicle,
+    getVehicles
 } = require("../controllers/vehicleController");
 
-router.get("/vehicles", getVehicles);
+router.post("/", addVehicle);
 
-router.post("/vehicles", addVehicle);
+router.get("/", getVehicles);
 
 module.exports = router;
